@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Desafío Tecnológico</title>
+
+	<link rel="stylesheet" href="css/app.css"/>
+</head>
+
+
+<body>
+  <div id="app">
+
+    <header>
+      <h1>
+        Valores de UF y UTM Históricos
+      </h1>
+
+      <h2>
+        consulta valores para distintos rangos de fechas
+      </h2>
+
+      <section class="range">
+        <div class="range__group">
+          <label for="from">DESDE</label>
+          <input type="date" name="from" v-model="fromDate" class="range__date">
+        </div>
+
+        <div class="range__group">
+          <label for="until">HASTA</label>
+          <input type="date" name="until" v-model="untilDate" class="range__date">
+        </div>
+      </section>
+
+      <button type="button" v-on:click="updateData()">
+        <i class="icon-arrow-down"></i>
+      </button>
+
+    </header>
+
+    <section class="charts">
+      <line-chart :currency="uf"  :values="ufRows"  :labels="ufLabels"  class="charts__chart"></line-chart>
+
+      <ul class="charts__info">
+        <li>
+          PROMEDIO: ${{stats.averageUf}}
+        </li>
+        <li>
+          VALOR MÍNIMO: ${{stats.minUf}}
+        </li>
+        <li>
+          VALOR MÁXIMO: ${{stats.maxUf}}
+        </li>
+      </ul>
+
+      <line-chart :currency="utm" :values="utmRows" :labels="utmLabels" class="charts__chart"></line-chart>
+      <ul class="charts__info">
+        <li>
+          PROMEDIO: ${{stats.averageUtm}}
+        </li>
+        <li>
+          VALOR MÍNIMO: ${{stats.minUtm}}
+        </li>
+        <li>
+          VALOR MÁXIMO: ${{stats.maxUtm}}
+        </li>
+      </ul>
+    </section>
+  </div>
+
+
+	<script src="js/app.js"></script>
+</body>
+
+
+</html>

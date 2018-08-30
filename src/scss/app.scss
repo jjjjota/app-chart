@@ -1,0 +1,93 @@
+@import '../fonts/josefinsans.scss';
+@import '~simple-line-icons/scss/simple-line-icons';
+
+// colors
+$blue: #6BDDFC;
+$white: #fff;
+
+// general
+html {
+  font: 16px/1.5 'Josefin Sans', 'sans-serif';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: #0B0719;
+}
+
+// header
+header {
+  margin: 100px;
+  border: 2px solid $blue;
+  border-radius: 5px;
+  padding: 100px 50px 50px 50px;
+
+  text-align: center;
+  color: $white;
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    color: darken($blue, 30);
+    margin-top: 0.5rem;
+  }
+
+  button {
+    margin-top: 100px;
+    border: none;
+
+    font-size: 2.5rem;
+    color: $blue;
+    background: none;
+    cursor: pointer;
+    visibility: hidden;
+  }
+
+  .active {
+    visibility: visible;
+  }
+
+  .range {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+
+    &__group {
+      width: 45%;
+      display: inline-flex;
+      flex-direction: column;
+    }
+
+    &__date {
+      border: none;
+      // border-left: 5px solid $blue;
+      border-bottom: 1px solid $white;
+      padding: 5px;
+      padding-left: 20px;
+
+      background: none;
+      color: darken($white, 50);
+    }
+  }
+}
+
+.charts {
+  margin: 100px;
+
+  &__info {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+
+    color: $blue;
+    visibility: hidden;
+  }
+}
